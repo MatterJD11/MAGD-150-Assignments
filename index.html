@@ -2,108 +2,33 @@
   <header>
   <script src="https://raw.githubusercontent.com/processing-js/processing-js/v1.4.8/processing.js"></script>
   </header>
-  <h1>Assignment Two</h1>
+  <h1>Assignment One</h1>
   <script type="text/processing" data-processing-target="mycanvas1">
   
-     void setup()
+    void setup()
     {
-      size(1280, 800);
-      background(250);
-    }
-    void draw()
-    {
-      background(250);
-      //Borders of the air hockey
-        stroke(255, 0, 0);
-        strokeWeight(25);
-        noFill();
-        quad(0, 0, 1280, 0, 1270, 750, 0, 750); 
-      //end
-      
-      //Center Cirle 
-        noFill();
-        stroke(255, 0, 0);
-        strokeWeight(15);
-        ellipseMode(CENTER);
-        ellipse(640, 400, 150, 150);
-        line(640, 0, 640, 325);
-        line(640, 475, 640, 800);
-        point(640, 350);
-        point(640, 450);
-      //end
-      
-      //Irrecgular polygon patterns
-      //Poly 1
-        fill(185, 69, 55);
-        noStroke();
-        beginShape();
-          vertex(20, 100);
-          vertex(30, 130);
-          vertex(130, 150);
-          vertex(120, 140);
-        endShape(CLOSE);
-      //Poly 2
-        fill(100, 66, 66);
-        strokeWeight(5);
-        stroke(89, 15, 150);
-        beginShape();
-          vertex(680, 50);
-          vertex(720, 35);
-          vertex(780, 65);
-          vertex(740, 200);
-          vertex(700, 225);
-        endShape(CLOSE);
-      //Poly 3
-        fill(65, 185, 62);
-        strokeWeight(10);
-        stroke(199, 45, 55);
-        beginShape();
-          vertex(350, 700);
-          vertex(390, 660);
-          vertex(410, 725);
-          vertex(360, 725);
-        endShape(CLOSE);
-      //Poly 4
-        fill(185, 15, 65);
-        strokeWeight(7);
-        stroke(150, 15, 181);
-        beginShape();
-          vertex(777, 666);
-          vertex(1040, 388);
-          vertex(1040, 735);
-          vertex(777, 688);
-        endShape(CLOSE);
-      //end
-      
-      //Hockey Puck
-        fill(0);
-        stroke(0);
-        strokeWeight(5);
-        ellipse(mouseX, mouseY, 50, 50);
-        noFill();
-        stroke(255);
-        strokeWeight(4);
-        ellipse(mouseX, mouseY, 35, 35);
-      //end
-      
-      //Goals
-        noFill();
-        strokeWeight(5);
-        stroke(0, 0, 255);
-        arc(15, 400, 150, 150, -HALF_PI, HALF_PI);
-        arc(1265, 400, 150, 150, -PI, PI);
-        fill(0, 0, 255);
-        strokeWeight(5);
-        stroke(0);
-        rect(0, 325, 35, 150);
-        rect(1245, 325, 35, 150);
-        fill(255, 0, 0);
-        strokeWeight(5);
-        stroke(0);
-        triangle(1275, 340, 1275, 460, 1250, 400);
-        fill(255);
-        triangle(5, 340, 5, 460, 30, 400);
-      //end
+      size(300, 300);
+      background(61, 55, 55);
+      //pong paddles
+      rectMode(CENTER);
+      rect(10, 50, 20, 50);
+      rectMode(CORNERS);
+      rect(279, 170, 299, 220); 
+      stroke(255, 185, 15);
+      //arrow
+      point(150, 223);
+      point(120, 193);
+      stroke(229, 27, 27);
+      line(150, 223, 120, 193);
+      line(150, 223, 144, 208);
+      line(150, 223, 135, 216);
+      stroke(61, 55, 55);
+      fill(255, 185, 15);
+      //balls
+      ellipseMode(CORNER);
+      ellipse(100, 173, 15, 15);
+      ellipseMode(CENTER);
+      ellipse(164, 238, 15, 15);
     }
 
   </script>
@@ -215,5 +140,135 @@
 
   </script>
   <canvas id="mycanvas2"></canvas>
+  
+  <h1>Assignment Three</h1>
+  <script type="text/processing" data-processing-target="mycanvas3">
+  
+    void setup()
+    {
+      size(1300, 800);
+      background(25, 81, 20);
+      //Preview Title Text
+        fill(255);
+        textSize(20);
+        text("THE FOLLOWING PREVIEW HAS BEEN APPROVED FOR", 400, 305);
+        textSize(28);
+        text("ALL AUDIENCES", 540, 350);
+        textSize(18);
+        text("BY THE MOTION PICTURE ASSOCIATION OF AMERICA, INC.", 400, 390);
+        textSize(13);
+        text("www.filmratings.com", 400, 505);
+        text("www.mpaa.org", 810, 505);
+    }
+    void draw()
+    {
+        
+      
+    }
+    void mousePressed()
+    {
+      background(25, 81, 20);
+      //Preview Title Text
+        fill(255);
+        textSize(20);
+        text("THE FOLLOWING PREVIEW HAS BEEN APPROVED FOR", 400, 305);
+        textSize(28);
+        text("ALL AUDIENCES", 540, 350);
+        textSize(18);
+        text("BY THE MOTION PICTURE ASSOCIATION OF AMERICA, INC.", 400, 390);
+        textSize(13);
+        text("www.filmratings.com", 400, 505);
+        text("www.mpaa.org", 810, 505);
+      //Print Triangles
+        fill(181, 70, 193);
+        stroke(126, 17, 139);
+        triangle(150, 50, 260, 70, pmouseX, pmouseY);
+        triangle(860, 620, 1222, 750, 760, 788);
+      //Golden Globe
+        stroke(0);
+        //base of Golden Globe
+          fill(155, 90, 30);
+          beginShape();
+            vertex(mouseX + 50, mouseY + 50);
+            vertex(mouseX + 130, mouseY + 50);
+            vertex(mouseX + 160, mouseY + 80);
+            vertex(mouseX + 20, mouseY + 80);
+          endShape();
+          rectMode(CENTER);
+          fill(98, 77, 18);
+          rect(mouseX + 90, mouseY + 65, 65, 20);
+        //stem of Golden Globe
+          fill(155, 99, 30);
+          rectMode(CENTER);
+          rect(mouseX + 90, mouseY, 60, 100);
+          fill(103, 86, 40);
+          rect(mouseX + 90, mouseY, 45, 80);
+        //base of top of Globe
+          stroke(210, 234, 54);
+          fill(210, 234, 54);
+          line(mouseX + 65, mouseY - 50, mouseX + 115, mouseY - 50);
+          arc(mouseX + 90, mouseY - 50, 50, 30, PI, TWO_PI);
+          stroke(0);
+          arc(mouseX + 90, mouseY - 80, 70, 40, 0, PI, CHORD);
+          stroke(0);
+          beginShape();
+            vertex(mouseX + 75, mouseY - 90);
+            vertex(mouseX + 105, mouseY - 90);
+            vertex(mouseX + 110, mouseY - 80);
+            vertex(mouseX + 70, mouseY - 80);
+          endShape();
+        //Globe
+          ellipseMode(CENTER);
+          ellipse(mouseX + 90, mouseY - 113, 50, 50);
+          stroke(231, 240, 177);
+          ellipse(mouseX + 90, mouseY - 113, 50, 15);
+          stroke(0);
+          noFill();
+          ellipse(mouseX + 90, mouseY - 113, 50, 50);
+          point(mouseX + 80, mouseY - 113);
+          point(mouseX + 100, mouseY - 113);
+          
+    }
+    void keyPressed()
+    {
+      background(25, 81, 20);
+     //Preview Title Text
+        fill(255);
+        textSize(20);
+        text("THE FOLLOWING PREVIEW HAS BEEN APPROVED FOR", 400, 305);
+        textSize(28);
+        text("ALL AUDIENCES", 540, 350);
+        textSize(18);
+        text("BY THE MOTION PICTURE ASSOCIATION OF AMERICA, INC.", 400, 390);
+        textSize(13);
+        text("www.filmratings.com", 400, 505);
+        text("www.mpaa.org", 810, 505);
+        
+        //hexagons appear when keyPressed() is used
+        noStroke();
+        fill(150);
+        beginShape();
+          vertex(1030, 50);
+          vertex(1100, 50);
+          vertex(1170, 100);
+          vertex(1100, 150);
+          vertex(1030, 150);
+          vertex(960, 100);
+        endShape();
+        fill(80);
+        beginShape();
+          vertex(1050, 80);
+          vertex(1080, 80);
+          vertex(1150, 100);
+          vertex(1080, 120);
+          vertex(1050, 120);
+          vertex(990, 100);
+        endShape();
+        stroke(0);
+        line(960, 100, 1170, 100);
+    }
+
+  </script>
+  <canvas id="mycanvas3"></canvas>
   </body>
 </html> 
